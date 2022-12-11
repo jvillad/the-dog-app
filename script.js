@@ -41,16 +41,24 @@ async function getDogDetails(theDog) {
 
     const responseObj = await response.json();
     const dogDetails = document.querySelector('.dog-details');
+    const ul = document.createElement('ul');
+
+    ul.setAttribute('class', 'test');
+        
     // const keys = Object.keys(responseObj[0])
-    console.log(Object.keys(responseObj[0]));
+    // console.log(Object.keys(responseObj[0]));
 
     dogDetails.innerHTML = `<img src="${responseObj[0].image_link}">`
-    
-    for(const item in responseObj[0]) {
-        
+
+    for(const key in responseObj[0]) {
+        if (key !== 'image_link') {
+
+            const el = document.createElement('li');
+            el.innerHTML = `${key}: ${responseObj[0][key]}`;
+            ul.appendChild(el);
+        }
     }
-    
-       
+    dogDetails.appendChild(ul);
 }
 
 function renderDogDetails(dogDetails) {
