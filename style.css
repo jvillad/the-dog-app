@@ -7,7 +7,7 @@
     --maroon: #B33951;
     --red: #EB5160;
     --grey: #5b5a5d;
-    --green: #00FF00;
+    --white: #ffffff;
     --font-size: 1.3rem;
     --space: 'Space Mono', monospace;
     --roboto: 'Roboto', sans-serif;
@@ -29,9 +29,15 @@ html {
 }
 
 body {
-    background-color: var(--secondblack);
-    color: var(--cream);
+    background-color: var(--white);
+    color: var(--black);
     font-family: var(--roboto);
+}
+
+.highlight {
+    color: var(--maroon);
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .page-container {
@@ -39,33 +45,41 @@ body {
     padding-top: 50px;
     margin: 0 auto;
     max-width: 1200px;  
+    text-align: center;
+    padding-bottom: 50px;
 
 }
 
-.page-container h1 {
+.note p {
+    padding-top: 40px;
+    font-size: 20px;
+}
 
-    text-align: center;
+.page-container h1 {
     font-family: var(--roboto);
-    padding-bottom: 50px;
-    color: var(--yellow);
+    padding-bottom: 30px;
+    text-align: center;
 }
 
 .selection {
     text-align: center;
     padding-bottom: 40px;
+    padding-top: 40px;
 }
+
 
 select, label {
     font-size: 20px;
-    font-family: var(--poppins);
+    font-family: var(--roboto);
 }
 
 img {
+
     border-radius: 15px;
-    height: 410px;
+    height: 465px;
     width: 600px;
     margin: 0 auto;
-    max-width: 100%;
+    min-width: 100%;
     max-height: 100%;
 }
 
@@ -82,9 +96,18 @@ span.breed-name {
 
 
 .breed-details ul {
+    font-size: 20px;
     list-style-type: none;
-    text-align: center;
+    /* text-align: center; */
+    display: block;
+    columns: 2;
+    
 }
+
+.breed-details ul li {
+    padding-top: 15px;
+}
+
 
 @media (max-width: 768px) { 
     .dog-details {
@@ -92,11 +115,11 @@ span.breed-name {
         gap: 20px;
     }
     img {
+        width: 365px;
         padding-bottom: 100px;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
     }
 
     .page-container h1 {
@@ -107,7 +130,6 @@ span.breed-name {
 }
 
 .breed-info {
-    font-size: 16px;
     color: var(--red);
 }
 
